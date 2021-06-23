@@ -2,13 +2,23 @@ import React, { useRef, useEffect } from 'react';
 import Child from './child';
 
 function Parent() {
-  const childRef = useRef(null);
+  let childRef = useRef(null);
+
+  const handleColor = (color) => {
+    childRef.current.style.color = color;
+  };
 
   useEffect(() => {
     console.log(childRef.current, 'parent.js');
   }, []);
 
-  return <Child forwardedRef={childRef} title='Passing refs' />;
+  return (
+    <Child
+      handleColor={handleColor}
+      forwardedRef={childRef}
+      title='Passing refs'
+    />
+  );
 }
 
 export default Parent;

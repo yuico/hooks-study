@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 
-function Child({ title, forwardedRef }) {
+function Child({ title, forwardedRef, handleColor }) {
   useEffect(() => {
     console.log(forwardedRef.current, 'child.js');
   }, []);
 
   return (
-    <>
-      <p ref={forwardedRef}>{title}</p>
-    </>
+    <div>
+      <p onClick={() => handleColor('red')} ref={forwardedRef}>
+        {title}
+      </p>
+    </div>
   );
 }
 
