@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 function Child({ title, forwardedRef, handleColor }) {
   useEffect(() => {
     console.log(forwardedRef.current, 'child.js');
-  }, []);
+  }, [forwardedRef]);
 
   return (
     <div>

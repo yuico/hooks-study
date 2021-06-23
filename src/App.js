@@ -10,6 +10,20 @@ function App() {
     firstNameRef.current.focus();
   }, []);
 
+  const firstKeyDown = (e) => {
+    if (e.key === 'Enter' && e.target.value !== '') {
+      lastNameRef.current.focus();
+    }
+  };
+  const lastKeyDown = (e) => {
+    if (e.key === 'Enter' && e.target.value !== '') {
+      submitRef.current.focus();
+    }
+  };
+  const submitKeyDown = () => {
+    alert('Form submitted');
+  };
+
   return (
     <div className='App'>
       <header className='App-header'>
