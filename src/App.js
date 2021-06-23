@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useRef } from 'react';
 import Parent from './components/parent';
+import Input from './components/input';
 
 function App() {
   const firstNameRef = useRef(null);
@@ -27,13 +28,13 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <input
+        <Input
           type='text'
           onKeyDown={firstKeyDown}
           ref={firstNameRef}
           placeholder='Enter first name'
         />
-        <input
+        <Input
           type='text'
           onKeyDown={lastKeyDown}
           ref={lastNameRef}
